@@ -55,13 +55,13 @@ types = MockTypes()
 def process_contents(contents):
     """Process the contents and print them as dictionaries"""
     contents = contents[:-1]
-    for content in contents:
+    for i, content in enumerate(contents):
         dict_content = content.to_dict()
         if "user" in dict_content:
-            print("## Me")
+            print(f"## Question {i + 1}")
             print(dict_content["user"])
         if "model" in dict_content:
-            print("## Gemini")
+            print(f"## Answer {i + 1}")
             print(dict_content["model"])
         print()
 
